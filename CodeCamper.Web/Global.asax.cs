@@ -21,9 +21,15 @@ namespace CodeCamper.Web
         {
             AreaRegistration.RegisterAllAreas();
 
+            // Tell WebApi to use our custom Ioc (Ninject)
+            IocConfig.RegisterIoc(GlobalConfiguration.Configuration);
+
+            // Web API template created these 3
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            GlobalConfig.CustomizeConfig(GlobalConfiguration.Configuration);
         }
     }
 }

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeCamper.Model", "CodeCam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeCamper.Data", "CodeCamper.Data\CodeCamper.Data.csproj", "{CFB5CCDB-8F5F-4F67-8F7F-E571523ED384}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeCamper.Data.Contracts", "CodeCamper.Data.Contracts\CodeCamper.Data.Contracts.csproj", "{95635373-151D-4F6C-87CB-65BA24C6E2C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{353810B1-C8CB-4A8B-86BC-F74929A1BF57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{353810B1-C8CB-4A8B-86BC-F74929A1BF57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{353810B1-C8CB-4A8B-86BC-F74929A1BF57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95635373-151D-4F6C-87CB-65BA24C6E2C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95635373-151D-4F6C-87CB-65BA24C6E2C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95635373-151D-4F6C-87CB-65BA24C6E2C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95635373-151D-4F6C-87CB-65BA24C6E2C1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{96511E6F-DD27-44A8-AD7E-002699F5AE87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{96511E6F-DD27-44A8-AD7E-002699F5AE87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96511E6F-DD27-44A8-AD7E-002699F5AE87}.Release|Any CPU.ActiveCfg = Release|Any CPU
