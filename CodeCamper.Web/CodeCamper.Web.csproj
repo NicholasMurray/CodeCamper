@@ -133,7 +133,15 @@
     <Compile Include="App_Start\NinjectDependencyScope.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\ValidationActionFilter.cs" />
+    <Compile Include="Controllers\ApiBaseController.cs" />
+    <Compile Include="Controllers\AttendanceController.cs" />
+    <Compile Include="Controllers\FavoritesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LookupsController.cs" />
+    <Compile Include="Controllers\PersonsController.cs" />
+    <Compile Include="Controllers\SessionBriefsController.cs" />
+    <Compile Include="Controllers\SessionsController.cs" />
+    <Compile Include="Controllers\SpeakersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -141,6 +149,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\CodeCamper.sdf" />
+    <Content Include="Content\qunit.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -172,34 +182,101 @@
     <Content Include="Content\toastr.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <None Include="Scripts\jquery-1.8.1.intellisense.js">
-      <DependentUpon>jquery-1.8.1.js</DependentUpon>
-    </None>
-    <Content Include="Scripts\jquery-1.8.1.js" />
-    <Content Include="Scripts\jquery-1.8.1.min.js">
-      <DependentUpon>jquery-1.8.1.js</DependentUpon>
+    <Content Include="Scripts\app\binder.js" />
+    <Content Include="Scripts\app\bootstrapper.js" />
+    <Content Include="Scripts\app\config.js" />
+    <Content Include="Scripts\app\datacontext.js" />
+    <Content Include="Scripts\app\datacontext.speaker-sessions.js" />
+    <Content Include="Scripts\app\dataprimer.js" />
+    <Content Include="Scripts\app\dataservice.attendance.js" />
+    <Content Include="Scripts\app\dataservice.js" />
+    <Content Include="Scripts\app\dataservice.lookup.js" />
+    <Content Include="Scripts\app\dataservice.person.js" />
+    <Content Include="Scripts\app\dataservice.session.js" />
+    <Content Include="Scripts\app\event.delegates.js" />
+    <Content Include="Scripts\app\filter.sessions.js" />
+    <Content Include="Scripts\app\filter.speakers.js" />
+    <Content Include="Scripts\app\group.js" />
+    <Content Include="Scripts\app\ko.bindingHandlers.js" />
+    <Content Include="Scripts\app\ko.debug.helpers.js" />
+    <Content Include="Scripts\app\messenger.js" />
+    <Content Include="Scripts\app\mock\mock.dataservice.attendance.js" />
+    <Content Include="Scripts\app\mock\mock.dataservice.lookup.js" />
+    <Content Include="Scripts\app\mock\mock.dataservice.person.js" />
+    <Content Include="Scripts\app\mock\mock.dataservice.session.js" />
+    <Content Include="Scripts\app\mock\mock.generator.js" />
+    <Content Include="Scripts\app\mock\mock.js" />
+    <Content Include="Scripts\app\model.attendance.js" />
+    <Content Include="Scripts\app\model.js" />
+    <Content Include="Scripts\app\model.mapper.js" />
+    <Content Include="Scripts\app\model.person.js" />
+    <Content Include="Scripts\app\model.room.js" />
+    <Content Include="Scripts\app\model.session.js" />
+    <Content Include="Scripts\app\model.timeslot.js" />
+    <Content Include="Scripts\app\model.track.js" />
+    <Content Include="Scripts\app\presenter.js" />
+    <Content Include="Scripts\app\route-config.js" />
+    <Content Include="Scripts\app\route-mediator.js" />
+    <Content Include="Scripts\app\router.js" />
+    <Content Include="Scripts\app\sort.js" />
+    <Content Include="Scripts\app\store.js" />
+    <Content Include="Scripts\app\utils.js" />
+    <Content Include="Scripts\app\vm.favorites.js" />
+    <Content Include="Scripts\app\vm.js" />
+    <Content Include="Scripts\app\vm.session.js" />
+    <Content Include="Scripts\app\vm.sessions.js" />
+    <Content Include="Scripts\app\vm.shell.js" />
+    <Content Include="Scripts\app\vm.speaker.js" />
+    <Content Include="Scripts\app\vm.speakers.js" />
+    <Content Include="Scripts\lib\amplify.core.js" />
+    <Content Include="Scripts\lib\amplify.request.js" />
+    <Content Include="Scripts\lib\amplify.store.js" />
+    <Content Include="Scripts\lib\infuser.js" />
+    <None Include="Scripts\lib\jquery-1.7.2-vsdoc.js" />
+    <Content Include="Scripts\lib\jquery-1.7.2.js" />
+    <Content Include="Scripts\lib\jquery-1.7.2.min.js">
+      <DependentUpon>jquery-1.7.2.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\jquery-ui-1.8.11.js" />
-    <Content Include="Scripts\jquery-ui-1.8.11.min.js">
-      <DependentUpon>jquery-ui-1.8.11.js</DependentUpon>
+    <Content Include="Scripts\lib\jquery.mockjson.js" />
+    <Content Include="Scripts\lib\json2.js" />
+    <Content Include="Scripts\lib\knockout-2.1.0.js" />
+    <Content Include="Scripts\lib\knockout.activity.js" />
+    <Content Include="Scripts\lib\knockout.asyncCommand.js" />
+    <Content Include="Scripts\lib\knockout.dirtyFlag.js" />
+    <Content Include="Scripts\lib\knockout.validation.js" />
+    <Content Include="Scripts\lib\koExternalTemplateEngine.js" />
+    <Content Include="Scripts\lib\modernizr-2.5.3.js" />
+    <Content Include="Scripts\lib\moment.js" />
+    <Content Include="Scripts\lib\require.js" />
+    <Content Include="Scripts\lib\sammy.js" />
+    <Content Include="Scripts\lib\sammy.title.js" />
+    <Content Include="Scripts\lib\toastr.js" />
+    <Content Include="Scripts\lib\TrafficCop.js" />
+    <Content Include="Scripts\lib\underscore.js" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js">
+      <DependentUpon>moment.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js">
-      <DependentUpon>jquery.unobtrusive-ajax.js</DependentUpon>
-    </Content>
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js">
-      <DependentUpon>jquery.validate.js</DependentUpon>
-    </Content>
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js">
-      <DependentUpon>jquery.validate.unobtrusive.js</DependentUpon>
-    </Content>
-    <Content Include="Scripts\knockout-2.1.0.debug.js" />
-    <Content Include="Scripts\knockout-2.1.0.js" />
-    <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
-    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Test\qunit\qunit-composite.css" />
+    <Content Include="Test\qunit\qunit-composite.js" />
+    <Content Include="Test\qunit\qunit.css" />
+    <Content Include="Test\qunit\qunit.js" />
+    <Content Include="Test\web api\qunit-utils.js" />
+    <Content Include="Test\web api\webapi.attendance-cud.tests.html" />
+    <Content Include="Test\web api\webapi.attendance-cud.tests.js" />
+    <Content Include="Test\web api\webapi.endpoint.tests.html" />
+    <Content Include="Test\web api\webapi.endpoint.tests.js" />
+    <Content Include="Test\web api\webapi.get-result.tests.html" />
+    <Content Include="Test\web api\webapi.get-result.tests.js" />
+    <Content Include="Test\web api\webapi.person-cud.tests.html" />
+    <Content Include="Test\web api\webapi.person-cud.tests.js" />
+    <Content Include="Test\web api\webapi.session-cud-validation.tests.html" />
+    <Content Include="Test\web api\webapi.session-cud-validation.tests.js" />
+    <Content Include="Test\web api\webapi.session-cud.tests.html" />
+    <Content Include="Test\web api\webapi.session-cud.tests.js" />
+    <Content Include="Test\web api\webapi.testsuite.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -227,16 +304,13 @@
     <Content Include="Images\orderedList9.png" />
     <Content Include="Images\twitter.png" />
     <Content Include="Images\windowsLive.png" />
-    <Content Include="Scripts\_references.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
