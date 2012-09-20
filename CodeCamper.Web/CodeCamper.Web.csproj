@@ -231,6 +231,7 @@
     <Content Include="Scripts\lib\amplify.request.js" />
     <Content Include="Scripts\lib\amplify.store.js" />
     <Content Include="Scripts\lib\infuser.js" />
+    <Content Include="index.cshtml" />
     <None Include="Scripts\lib\jquery-1.7.2-vsdoc.js" />
     <Content Include="Scripts\lib\jquery-1.7.2.js" />
     <Content Include="Scripts\lib\jquery-1.7.2.min.js">
@@ -303,11 +304,15 @@
     <Content Include="Images\orderedList9.png" />
     <Content Include="Images\twitter.png" />
     <Content Include="Images\windowsLive.png" />
-    <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\favorites.cshtml" />
+    <Content Include="Views\session.cshtml" />
+    <Content Include="Views\sessions.cshtml" />
+    <Content Include="Views\speaker.cshtml" />
+    <Content Include="Views\speakers.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -343,7 +348,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>49523</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:52692/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
