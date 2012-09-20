@@ -136,7 +136,6 @@
     <Compile Include="Controllers\ApiBaseController.cs" />
     <Compile Include="Controllers\AttendanceController.cs" />
     <Compile Include="Controllers\FavoritesController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LookupsController.cs" />
     <Compile Include="Controllers\PersonsController.cs" />
     <Compile Include="Controllers\SessionBriefsController.cs" />
@@ -232,7 +231,6 @@
     <Content Include="Scripts\lib\amplify.request.js" />
     <Content Include="Scripts\lib\amplify.store.js" />
     <Content Include="Scripts\lib\infuser.js" />
-    <Content Include="index.cshtml" />
     <None Include="Scripts\lib\jquery-1.7.2-vsdoc.js" />
     <Content Include="Scripts\lib\jquery-1.7.2.js" />
     <Content Include="Scripts\lib\jquery-1.7.2.min.js">
